@@ -2,7 +2,8 @@
 function wcs_post_types(){
     // Event post type
     register_post_type('event', array(
-        'show_in_rest' => true,
+         'capability_type' => 'event',
+         'map_meta_cap' => true,
         'supports' => array('title', 'editor','excerpt'),
         'rewrite' => array('slug' => 'events'),
         'has_archive' => true,
@@ -20,7 +21,7 @@ function wcs_post_types(){
     // Program post type
     register_post_type('program', array(
         'show_in_rest' => true,
-        'supports' => array('title', 'editor'),
+        'supports' => array('title'),
         'rewrite' => array('slug' => 'programs'),
         'has_archive' => true,
         'public' => true,
