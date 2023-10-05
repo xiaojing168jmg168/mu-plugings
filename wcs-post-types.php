@@ -66,6 +66,36 @@ function wcs_post_types(){
         ),
         'menu_icon' => 'dashicons-welcome-write-blog'
     ));
+
+    // Like Post Type
+    register_post_type('like', array(
+        'supports' => array('title'),
+        'public' => false,
+        'show_ui' => true,
+        'labels' => array(
+            'name' => 'Likes',
+            'add_new_item' => 'Add New Like',
+            'edit_item' => 'Edit Like',
+            'all_items' => 'All Likes',
+            'singular_name' => 'Like'
+        ),
+        'menu_icon' => 'dashicons-heart'
+    ));
+
+    // Homepage Slideshow Post Type
+    register_post_type('homepage-slideshow', array(
+        'supports' => array('title'),
+        'public' => false, // not publicly visible
+        'show_ui' => true,  // to be visible in the admin panel
+        'labels' => array(
+            'name' => 'Homepage-slideshow',
+            'add_new_item' => 'Add New homepage-slide',
+            'edit_item' => 'Edit homepage-slide',
+            'all_items' => 'All homepage-slide',
+            'singular_name' => 'Homepage-slide'
+        ),
+        'menu_icon' => 'dashicons-images-alt'
+    ));
 }
 
 add_action('init', 'wcs_post_types');
